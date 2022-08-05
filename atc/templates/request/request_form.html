@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+
+{% block title %}New request{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<h2 class="text-center">Add new request</h2>
+{% if req_id.id %}
+    <form action="{% url 'update_request_action' req_id.id %}" method="post" class="col-offset-2 col-8">
+    {% else %}
+    <form action="{% url 'add-new-request-action' %}" method="post" class="col-offset-2 col-8">
+        {% endif %}
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="ref">Ref no.</label>
+                <input type="integer" value="{{req_id.ref}}" name="ref" class="form-control" required="true" id="ref"
+                       placeholder="nb">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="title">Title</label>
+                <input type="text" name="title" value="{{req_id.title}}" class="form-control" required="true" id="title"
+                       placeholder="Title">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="price">Price</label>
+                <input type="integer" name="price" value="{{req_id.price}}" class="form-control" required="true"
+                       id="price" placeholder="Price">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="due_date">Due Date</label>
+                <input type="date" required="true" name="due_date" placeholder="dd-mm-yyyy"
+                       min="1997-01-01" max="2030-12-31" value="{{due_date}}" class="form-control" id="due_date">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="status">Request status</label>
+                <select name="status" class="form-control" id="status">
+                    <option>request</option>
+                    <option>offer</option>
+                    <option>agreement</option>
+                </select>
+            </div>
+        </div>
+        {% if not req_id %}
+        <button type="submit" class="text-center btn btn-primary">Add</button>
+        {% else %}
+        <button type="submit" class="text-center btn btn-primary">Save</button>
+        {% endif %}
+    </form>
+</form>
+{% endblock %}

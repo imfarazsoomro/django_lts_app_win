@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+<title>
+    {% block title %}Requests{% endblock %}
+</title>
+
+{% block content %}
+<div class="container">
+    <div id="kanban-summary" class="row justify-content-center">
+        <div id="all-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>{{all_req_count}}</span><br>
+            <span>All</span>
+        </div>
+        <div id="app-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>{{request_count}}</span><br>
+            <span>Applications</span>
+        </div>
+        <div id="screening-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>20</span><br>
+            <span>Screening</span>
+        </div>
+        <div id="telephone-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>20</span><br>
+            <span>Telephone Interview</span>
+        </div>
+        <div id="personal-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>20</span><br>
+            <span>Personal Interview</span>
+        </div>
+        <div id="decision-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>20</span><br>
+            <span>Decision</span>
+        </div>
+        <div id="cancel-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>20</span><br>
+            <span>Cancelled</span>
+        </div>
+        <div id="offer-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>{{offer_count}}</span><br>
+            <span>Offer</span></div>
+        <div id="accept-count" class="col-sm-2 col-xl-1">
+            <span class='kanban-count'>{{agreement_count}}</span><br>
+            <span>Accepted</span>
+        </div>
+    </div>
+</div>
+<div id="req_container" class="container mb-4">
+    <a href="/request-form/" id="add_new_req_btn">Add new request <span>+</span></a>
+    <div class="open_req row">
+        <h2 class="req-title">Open Requests</h2>
+        <table class="table req-table">
+            <tr>
+                <th>#</th>
+                <th>nb.</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Due Date</th>
+                <th>Remaining time</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for req in requests %}
+            <tr>
+                <td>{{req.id}}</td>
+                <td>{{req.ref}}</td>
+                <td>{{req.title}}</td>
+                <td>{{req.price}}</td>
+                <td>{{req.due_date}}</td>
+                <td>{{req.remaining_time}}</td>
+                <td>
+                    <a href="{% url 'update_request_action' req.id %}" class="edit-button">edit</a>
+                </td>
+                <td>
+                    <a href="{% url 'delete_request' req.id %}"
+                       onclick="return confirm('Are you sure you want to delete this?')"
+                       class="delete-button">delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="open_req row">
+        <h2 class="req-title">Received Offers</h2>
+        <table class="table req-table">
+            <tr>
+                <th>#</th>
+                <th>nb.</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Due Date</th>
+                <th>Remaining time</th>
+                <th></th>
+            </tr>
+            {% for offer in offers %}
+            <tr>
+                <td>{{offer.id}}</td>
+                <td>{{offer.ref}}</td>
+                <td>{{offer.title}}</td>
+                <td>{{offer.price}}</td>
+                <td>{{offer.due_date}}</td>
+                <td>{{offer.remaining_time}}</td>
+                <td>
+                    <a href="" class="edit-button">review</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="open_req row">
+        <h2 class="req-title">Agreements</h2>
+        <table class="table req-table">
+            <tr>
+                <th>#</th>
+                <th>nb.</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Due Date</th>
+                <th>Remaining time</th>
+                <th></th>
+            </tr>
+            {% for agreement in agreements %}
+            <tr>
+                <td>{{agreement.id}}</td>
+                <td>{{agreement.ref}}</td>
+                <td>{{agreement.title}}</td>
+                <td>{{agreement.price}}</td>
+                <td>{{agreement.due_date}}</td>
+                <td>{{agreement.remaining_time}}</td>
+                <td>
+                    <a href="" class="edit-button">view</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+/*main content div*/
+div#main-content{
+    width: 80%;
+    float: right;
+}
+/*kanban summary of offers*/
+div#kanban-summary{
+    margin-top: 40px;
+}
+div#kanban-summary div{
+    padding: 10px 5px;
+    width:9.1%;
+    overflow: hidden;
+}
+.kanban-count{
+    font-weight: bold;
+}
+#all-count{
+    border-top: solid #f4f5f9;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+    border-radius: 5px 0 0 5px;
+}
+#app-count{
+    border-top: solid #2c4ed5;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+}
+#screening-count{
+    border-top: solid #19337f;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+}
+#telephone-count{
+    border-top: solid #f3f439;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+}
+#personal-count{
+    border-top: solid #f5f8fa;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+}
+#decision-count{
+    border-top: solid #f23018;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+}
+#cancel-count{
+    border-top: solid #e85041;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+}
+#offer-count{
+    border-top: solid #16b7e1;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+}
+#accept-count{
+    border-top: solid #14a113;
+    border-bottom: 2px solid #f4f5f9;
+    border-left: 2px solid #f4f5f9;
+    border-right: 2px solid #f4f5f9;
+    border-radius: 0 5px 5px 0;
+}
+#add_new_req_btn{
+    float: right;
+    padding: 0px 30px;
+    color: #000;
+}
+#add_new_req_btn span{
+    color: red;
+    font-size: 30px;
+    vertical-align: middle;
+}
+#add_new_req_btn a:hover{
+    text-decoration: none;
+}
+
+/*requests*/
+.open_req{
+    width:90%;
+    border:2px solid #009c6b;
+    border-radius: 10px;
+    margin: 5% auto 0 auto;
+    padding: 5px 10px;
+}
+.req-title{
+    margin-left:25px;
+    margin-top: -25px;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 30px;
+    background: white;
+    width: fit-content;
+    padding: 0 10px;
+}
+/*table.req-table{
+    width: 100%;
+}*/
+.edit-button{
+    padding: 3px 10px;
+    font-style: italic;
+    background: #f19d19;
+    color: white;
+}
+.delete-button{
+    padding: 3px 10px;
+    font-style: italic;
+    background: red;
+    color: white;
+}
+a.edit-button:hover{
+    color: white;
+    text-decoration: none;
+}

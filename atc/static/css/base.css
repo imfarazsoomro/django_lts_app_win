@@ -1,0 +1,58 @@
+/*top navbar*/
+nav#lts_nav span{
+    font-size: 20px;
+    padding-left: 10px;
+}
+nav#lts_nav{
+    background: #009c6b;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+#brand a{
+    text-decoration: none;
+    color: #000;
+}
+#brand span a:hover{
+    text-decoration: none;
+    color: #ffffff;
+}
+/*menu items*/
+.menu-item{
+    margin-top: 2.5rem;
+}
+.menu-item a{
+    text-decoration: none;
+    color: white;
+}
+.menu-item a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+/*sidebar styles*/
+div#sidebar{
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    background: #8497b0;
+}
+ul#sidebar_menus{
+    margin-top: 35%;
+}
+ul#sidebar_menus li{
+    display: block;
+    padding: 5px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+ul#sidebar_menus li a{
+    color: #000;
+}
+ul#sidebar_menus li a:hover{
+    text-decoration: none;
+}
+/*main content*/
+div#main-content{
+    margin-top: 5%;
+}
